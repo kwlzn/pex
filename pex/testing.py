@@ -283,9 +283,11 @@ def combine_pex_coverage(coverage_file_iter):
 def bootstrap_python_installer():
   install_location = os.path.join(os.getcwd(), '.pyenv_test')
   print('##########################')
-  os.system('ls -alR .')
+  os.system('echo $PATH')
   print('##########################')
   os.system('which git')
+  print('##########################')
+  os.system('ls -alR .pytest_env')
   print('##########################')
 
   if not os.path.exists(install_location):
