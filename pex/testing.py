@@ -289,7 +289,8 @@ def bootstrap_python_installer():
   print('##########################')
   os.system('which git')
   print('##########################')
-  os.system('ls -alR .pytest_env')
+  os.system('git --version')
+  os.system('git clone https://github.com/pyenv/pyenv.git')
   print('##########################')
 
   if not os.path.exists(install_location):
