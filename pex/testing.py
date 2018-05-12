@@ -282,27 +282,14 @@ def combine_pex_coverage(coverage_file_iter):
 
 def bootstrap_python_installer():
   install_location = os.path.join(os.getcwd(), '.pyenv_test')
-  print('##########################')
-  print('install_location -> {}'.format(install_location))
-  print('##########################')
-  os.system('echo $PATH')
-  print('##########################')
-  os.system('which git')
-  print('##########################')
-  os.system('git --version')
-  os.system('git clone https://github.com/pyenv/pyenv.git .pyenv_test')
-  print('##########################')
-
-  if not os.path.exists(install_location):
+  binary_path = os.path.join(install_location, 'bin/pytest')
+  if not os.path.exists(binary_path):
+    safe_rmtree(install_location)
     for _ in range(3):
       subprocess.check_call(['git', 'clone', 'https://github.com/pyenv/pyenv.git', install_location])
       break
     else:
       raise RuntimeError("Helper method could not clone pyenv from git after 3 tries")
-
-  print('##########################')
-  os.system('ls -alR .pytest_env')
-  print('##########################')
 
 
 def ensure_python_interpreter(version):
