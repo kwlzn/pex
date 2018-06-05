@@ -15,7 +15,7 @@ matrix:
   include:
     - language: python
       python: "pypy"
-      before_script: ulimit -Hn 64000
+      before_script: ulimit -Sn 64000
       env: TOXENV=pypy
 
 install:
