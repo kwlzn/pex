@@ -15,7 +15,9 @@ matrix:
   include:
     - language: python
       python: "pypy"
-      before_script: grep 'limits' /etc/pam.d/common-session*
+      before_script:
+        - cat /etc/pam.d/login
+        - cat /etc/pam.d/*
       env: TOXENV=pypy
 
 install:
