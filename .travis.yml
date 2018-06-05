@@ -17,6 +17,7 @@ matrix:
       python: "pypy"
       before_script:
         - ulimit -a
+        - ulimit -n 64000
       env: TOXENV=pypy
 
 install:
