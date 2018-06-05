@@ -3,7 +3,7 @@
 # "machines".
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 sudo: false
-dist: precise
+dist: trusty
 
 # TRAVIS_PYTHON_VERSION
 
