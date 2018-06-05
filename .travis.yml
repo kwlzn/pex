@@ -17,7 +17,7 @@ matrix:
       python: "pypy"
       before_script:
         - cat /etc/pam.d/login
-        - cat /etc/pam.d/*
+        - grep limits /etc/pam.d/*
       env: TOXENV=pypy
 
 install:
