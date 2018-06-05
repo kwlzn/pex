@@ -15,7 +15,7 @@ matrix:
   include:
     - language: python
       python: "pypy"
-      before_script: cat /proc/sys/fs/file-max
+      before_script: ulimit -Hn 64000
       env: TOXENV=pypy
 
 install:
