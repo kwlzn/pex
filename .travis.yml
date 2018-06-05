@@ -19,6 +19,7 @@ matrix:
         - find /etc/security
         - cat /etc/security/limits.conf
         - cat /etc/security/limits.d/*
+        - ulimit -a
       env: TOXENV=style
 
 install:
