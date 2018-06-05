@@ -14,13 +14,9 @@ cache:
 matrix:
   include:
     - language: python
-      python: "2.7"
-      before_script:
-        - find /etc/security
-        - cat /etc/security/limits.conf
-        - cat /etc/security/limits.d/*
-        - ulimit -a
-      env: TOXENV=style
+      python: "pypy"
+      before_script: ulimit -n 64000
+      env: TOXENV=pypy
 
 install:
   - pip install -U tox "setuptools<34"
